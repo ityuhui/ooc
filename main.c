@@ -1,7 +1,11 @@
 #include <stdio.h>
-#include <memory.h>
+#include <stdlib.h>
 
 #define MAX_SLOT_NUMBER 10
+
+typedef struct base_t {
+    struct base_vtbl_t *vptr ;
+} base;
 
 typedef struct base_vtbl_t {
     void (*fun_1)(base *);
@@ -11,9 +15,7 @@ typedef struct derived_vtbl_t {
     void (*fun_1)(base *);
 } derived_vtbl;
 
-typedef struct base_t {
-    base_vtbl *vptr ;
-} base;
+
 
 void base_init(base *p) 
 {
