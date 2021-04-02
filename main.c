@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_SLOT_NUMBER 10
-
 typedef struct base_t {
     struct base_vtbl_t *vptr;
 } base;
